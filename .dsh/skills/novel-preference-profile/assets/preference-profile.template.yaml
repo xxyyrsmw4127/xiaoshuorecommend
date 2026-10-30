@@ -1,0 +1,60 @@
+# 阅读偏好档案模板
+#
+# 用法：复制到 <工作区>/novel-data/preference-profile.yaml 后填写。
+# 这份档案是推荐质量的唯一决定因素：没有档案就没有推荐。
+#
+# 填写原则：
+#   1. weight 用 1-5 整数，5 = 决定性偏好（没有就不看），1 = 有更好。
+#   2. 雷点单独放 dealbreakers，不要用负权重表达。
+#   3. 每条偏好都要写 evidence（证据来自哪本书/哪句话）；没有证据的标 confidence: low。
+
+version: 1
+updated: ""            # 最近更新日期 YYYY-MM-DD
+
+basic:
+  audience: ""         # 男频 / 女频 / 两者都看
+  platforms: []        # 常用平台，如 [起点, 番茄, 晋江]
+  reading_mode: ""     # 追更 / 只看完本 / 混合
+  pays: ""             # 付费意愿：只免费 / 可付费 / 只买断已完结
+  length_tolerance: "" # 长度容忍度：如 "百万字以上需谨慎" / "越长越好"
+
+# 正面偏好：题材、流派、爽点结构。weight 1-5。
+likes:
+  - tag: ""            # 尽量具体，如 "无限流", "系统流", "种田基建", "悬疑推理"
+    weight: 3
+    confidence: ""     # confirmed | inferred | low
+    evidence: ""       # 如 "读完《十日终焉》并给 5 星"
+    note: ""
+
+# 核心口味：比标签更本质的偏好，写在自由文本里，推荐时的最高判据。
+core_preferences:
+  protagonist: ""      # 喜欢什么样的主角：理智冷静 / 杀伐果断 / 苟道流 / 热血少年
+  pacing: ""           # 节奏偏好：开局要快 / 接受慢热铺垫
+  tone: ""             # 基调：轻松诙谐 / 沉重严肃 / 黑暗
+  focus: ""            # 更看重剧情 / 人物 / 世界观 / 爽感
+  free_text: ""        # 无法归类的关键口味，用自然语言描述
+
+# 雷点。hard = 踩到直接弃书；soft = 明显掉分但可容忍。
+dealbreakers:
+  hard:
+    - tag: ""          # 如 "后宫", "圣母主角", "烂尾", "机翻", "AI 水文"
+      evidence: ""
+  soft:
+    - tag: ""
+      evidence: ""
+
+authors:
+  favorite: []         # 优先推荐其作品的作者
+  avoid: []            # 明确不再看的作者
+
+# 已被用户否决的推荐，避免重复推同一本。
+rejected_recommendations:
+  - title: ""
+    reason: ""
+    date: ""
+
+# 偏好演化轨迹：每次实质修改追加一行，不要删除旧条目。
+changelog:
+  - date: ""
+    change: ""
+    evidence: ""
